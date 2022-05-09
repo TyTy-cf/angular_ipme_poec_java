@@ -2,7 +2,14 @@
 <div class="container">
   <h1>Chess Game !</h1>
 
-  <div *ngFor="let tile of chessBoard.tiles">
-    {{ tile.x }}/{{ tile.y }} - {{ tile.piece?.image }}
+  <div class="d-none d-sm-block">
+    <div class="row chessboard mx-auto">
+      <div class="chess-tile {{ tile.color }}" *ngFor="let tile of chessBoard.tiles">
+        <img [src]="tile.piece?.image" class="mt-1">
+      </div>
+    </div>
   </div>
+  <p class="d-block d-sm-none text-center">
+    Achète un grand écran !!!
+  </p>
 </div>

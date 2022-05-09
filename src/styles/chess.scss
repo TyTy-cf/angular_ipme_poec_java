@@ -1,0 +1,25 @@
+
+$size-board: 600px;
+
+.white {
+  background-color: whitesmoke;
+}
+
+.black {
+  background-color: #333;
+}
+
+.chessboard {
+  width: $size-board;
+  height: $size-board;
+}
+
+.chess-tile {
+  width: $size-board/8;
+  height: $size-board/8;
+
+  > img {
+    height: 80%;
+  }
+
+}
