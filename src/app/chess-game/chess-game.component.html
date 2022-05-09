@@ -1,0 +1,8 @@
+
+<div class="container">
+  <h1>Chess Game !</h1>
+
+  <div *ngFor="let tile of chessBoard.tiles">
+    {{ tile.x }}/{{ tile.y }} - {{ tile.piece?.image }}
+  </div>
+</div>
