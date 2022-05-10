@@ -72,6 +72,7 @@ export class ChessBoard {
     if (tile.piece && this._temporaryClickedTile === undefined) {
       this._temporaryClickedTile = tile;
       tile.isSelected = !tile.isSelected;
+      console.log(this._temporaryClickedTile);
     } else {
       if (tile === this._temporaryClickedTile) {
         this._temporaryClickedTile = undefined;
