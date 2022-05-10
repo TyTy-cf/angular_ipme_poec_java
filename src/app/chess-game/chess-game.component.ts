@@ -11,7 +11,7 @@ export class ChessGameComponent implements OnInit {
   chessBoard: ChessBoard = new ChessBoard();
 
   ngOnInit(): void {
-    console.log(this.chessBoard.tiles);
+    // console.log(this.chessBoard.tiles);
   }
 
 }

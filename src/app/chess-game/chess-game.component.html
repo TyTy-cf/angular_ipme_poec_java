@@ -4,8 +4,13 @@
 
   <div class="d-none d-sm-block">
     <div class="row chessboard mx-auto">
-      <div class="chess-tile {{ tile.color }}" *ngFor="let tile of chessBoard.tiles">
+      <div class="chess-tile {{ tile.color }}"
+           *ngFor="let tile of chessBoard.tiles"
+           [class.badcolor]="tile.isSelected"
+           (click)="chessBoard.move(tile)"
+      >
         <img [src]="tile.piece?.image" class="mt-1">
+<!--          src="{{tile.piece?.image}}"-->
       </div>
     </div>
   </div>

@@ -1,9 +1,13 @@
 
 body {
-  background-color: antiquewhite;
+  background-color: $default-background;
+}
+
+.bg-light {
+  background-color: $d-bg-d15 !important;
 }
 
 .badcolor {
-  background-color: deeppink;
+  background-color: deeppink !important;
 }
 

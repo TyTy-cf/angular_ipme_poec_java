@@ -15,8 +15,8 @@ $size-board: 600px;
 }
 
 .chess-tile {
-  width: $size-board/8;
-  height: $size-board/8;
+  width: calc(#{$size-board}/8);
+  height: calc(#{$size-board}/8);
 
   > img {
     height: 80%;

@@ -1,0 +1,9 @@
+
+$default-background: antiquewhite;
+
+$d-bg-l10: lighten($default-background, 10%);
+$d-bg-l15: lighten($default-background, 15%);
+$d-bg-l20: lighten($default-background, 20%);
+$d-bg-l25: lighten($default-background, 25%);
+
+$d-bg-d15: darken($default-background, 15%);

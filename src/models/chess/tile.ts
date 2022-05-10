@@ -2,6 +2,14 @@ import {Piece} from "./piece";
 
 export class Tile {
 
+  // private _y: number;
+  //
+  // constructor(_y: number) {
+  //   this._y = _y;
+  // }
+
+  private _isSelected: boolean = false;
+
   constructor(
     private _y: number,
     private _x: number,
@@ -39,5 +47,13 @@ export class Tile {
 
   set color(value: string) {
     this._color = value;
+  }
+
+  get isSelected(): boolean {
+    return this._isSelected;
+  }
+
+  set isSelected(value: boolean) {
+    this._isSelected = value;
   }
 }
