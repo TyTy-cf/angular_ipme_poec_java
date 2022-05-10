@@ -13,7 +13,8 @@ export class HttpClientGameService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getGames(urlGamesPaginated: string = '/api/games?page=1'): Observable<IApiResult<Game>> {
+  getGames(urlGamesPaginated: string): Observable<IApiResult<Game>> {
+    console.log(this.urlApi + urlGamesPaginated);
     return this.httpClient.get<IApiResult<Game>>(this.urlApi + urlGamesPaginated);
   }
 

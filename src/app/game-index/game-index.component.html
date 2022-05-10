@@ -1,1 +1,17 @@
-<p>game-index works!</p>
+
+
+<div class="container" *ngIf="apiResult">
+  <div class="d-flex justify-content-between mt-3">
+    <button class="btn btn-success">First</button>
+    <button class="btn btn-primary">Previous</button>
+    <button class="btn btn-warning">Next</button>
+    <button class="btn btn-danger">Last</button>
+  </div>
+  <div class="row">
+    <div class="col-lg-3 col-md-6" *ngFor="let game of apiResult['hydra:member']">
+      <div class="p-3 w-100 h-100">
+        <img [src]="game.thumbnailCover" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>

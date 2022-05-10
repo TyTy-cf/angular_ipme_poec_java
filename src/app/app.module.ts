@@ -7,6 +7,7 @@ import { ChessGameComponent } from './chess-game/chess-game.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {HttpClientModule} from "@angular/common/http";
 import { GameIndexComponent } from './game-index/game-index.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { GameIndexComponent } from './game-index/game-index.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
