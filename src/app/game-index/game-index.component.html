@@ -2,7 +2,9 @@
 
 <div class="container" *ngIf="apiResult; else loadingData">
 
-  <app-paginator [hydraView]="apiResult['hydra:view']"></app-paginator>
+  <app-paginator  [hydraView]="apiResult['hydra:view']"
+                  (eventEmitterUrlClicked)="updateGamePage($event)"
+  ></app-paginator>
 
   <div class="row">
     <div class="col-lg-4 col-md-6 my-5" *ngFor="let game of apiResult['hydra:member']">
@@ -13,7 +15,9 @@
     </div>
   </div>
 
-  <app-paginator [hydraView]="apiResult['hydra:view']"></app-paginator>
+  <app-paginator  [hydraView]="apiResult['hydra:view']"
+                  (eventEmitterUrlClicked)="updateGamePage($event)"
+  ></app-paginator>
 
 </div>
 

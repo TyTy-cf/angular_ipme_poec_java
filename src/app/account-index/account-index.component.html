@@ -1,7 +1,14 @@
 
 <div class="container" *ngIf="apiResults">
 
-  <app-paginator [hydraView]="apiResults['hydra:view']"></app-paginator>
+  <!-- paginator est un component fille de account-index (mère) -->
+  <!-- eventEmitterUrlClicked => Output depuis la fille -->
+  <!-- on doit passer l'information à une fonction de la classe mère -->
+  <!-- qui prend un paramètre du même type déclaré dans l'EventEmitter de la fille -->
+  <!-- ici : string ($event sera donc de type string) -->
+  <app-paginator  [hydraView]="apiResults['hydra:view']"
+                  (eventEmitterUrlClicked)="updateResult($event)"
+  ></app-paginator>
 
   <table class="table table-striped table-hover">
     <thead>
@@ -37,7 +44,9 @@
     </tbody>
   </table>
 
-  <app-paginator [hydraView]="apiResults['hydra:view']"></app-paginator>
+  <app-paginator  [hydraView]="apiResults['hydra:view']"
+                  (eventEmitterUrlClicked)="updateResult($event)"
+  ></app-paginator>
 
 </div>
 
