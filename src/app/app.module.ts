@@ -10,6 +10,7 @@ import { GameIndexComponent } from './game-index/game-index.component';
 import {FormsModule} from "@angular/forms";
 import { AccountIndexComponent } from './account-index/account-index.component';
 import { AccountShowComponent } from './account-show/account-show.component';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AccountShowComponent } from './account-show/account-show.component';
     NavbarComponent,
     GameIndexComponent,
     AccountIndexComponent,
-    AccountShowComponent
+    AccountShowComponent,
+    PaginatorComponent
   ],
   imports: [
     BrowserModule,

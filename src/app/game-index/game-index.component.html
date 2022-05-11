@@ -1,30 +1,9 @@
 
 
 <div class="container" *ngIf="apiResult; else loadingData">
-  <div class="d-flex justify-content-between mt-3">
-    <button class="btn btn-success"
-            (click)="updateGamePage(apiResult['hydra:view']['hydra:first'])"
-    >
-      First
-    </button>
-    <button class="btn btn-primary"
-            (click)="updateGamePage(apiResult['hydra:view']['hydra:previous'])"
-            [disabled]="apiResult['hydra:view']['hydra:previous'] === undefined"
-    >
-      Previous
-    </button>
-    <button class="btn btn-warning"
-            (click)="updateGamePage(apiResult['hydra:view']['hydra:next'])"
-            [disabled]="apiResult['hydra:view']['hydra:next'] === undefined"
-    >
-      Next
-    </button>
-    <button class="btn btn-danger"
-            (click)="updateGamePage(apiResult['hydra:view']['hydra:last'])"
-    >
-      Last
-    </button>
-  </div>
+
+  <app-paginator [hydraView]="apiResult['hydra:view']"></app-paginator>
+
   <div class="row">
     <div class="col-lg-4 col-md-6 my-5" *ngFor="let game of apiResult['hydra:member']">
       <div class="p-3 w-100 h-100">
@@ -33,6 +12,9 @@
       </div>
     </div>
   </div>
+
+  <app-paginator [hydraView]="apiResult['hydra:view']"></app-paginator>
+
 </div>
 
 <ng-template #loadingData>
@@ -40,3 +22,28 @@
     <h1>Récupération des données en cours...</h1>
   </div>
 </ng-template>
+
+<!--<div class="d-flex justify-content-between mt-3">-->
+<!--  <button class="btn btn-success"-->
+<!--          (click)="updateGamePage(apiResult['hydra:view']['hydra:first'])"-->
+<!--  >-->
+<!--    First-->
+<!--  </button>-->
+<!--  <button class="btn btn-primary"-->
+<!--          (click)="updateGamePage(apiResult['hydra:view']['hydra:previous'])"-->
+<!--          [disabled]="apiResult['hydra:view']['hydra:previous'] === undefined"-->
+<!--  >-->
+<!--    Previous-->
+<!--  </button>-->
+<!--  <button class="btn btn-warning"-->
+<!--          (click)="updateGamePage(apiResult['hydra:view']['hydra:next'])"-->
+<!--          [disabled]="apiResult['hydra:view']['hydra:next'] === undefined"-->
+<!--  >-->
+<!--    Next-->
+<!--  </button>-->
+<!--  <button class="btn btn-danger"-->
+<!--          (click)="updateGamePage(apiResult['hydra:view']['hydra:last'])"-->
+<!--  >-->
+<!--    Last-->
+<!--  </button>-->
+<!--</div>-->

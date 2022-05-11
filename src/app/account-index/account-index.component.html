@@ -1,29 +1,8 @@
 
 <div class="container" *ngIf="apiResults">
-  <div class="d-flex justify-content-between mt-3">
-    <button class="btn btn-success"
-            (click)="updateResult(apiResults['hydra:view']['hydra:first'])"
-    >
-      First
-    </button>
-    <button class="btn btn-primary"
-            (click)="updateResult(apiResults['hydra:view']['hydra:previous'])"
-            [disabled]="apiResults['hydra:view']['hydra:previous'] === undefined"
-    >
-      Previous
-    </button>
-    <button class="btn btn-warning"
-            (click)="updateResult(apiResults['hydra:view']['hydra:next'])"
-            [disabled]="apiResults['hydra:view']['hydra:next'] === undefined"
-    >
-      Next
-    </button>
-    <button class="btn btn-danger"
-            (click)="updateResult(apiResults['hydra:view']['hydra:last'])"
-    >
-      Last
-    </button>
-  </div>
+
+  <app-paginator [hydraView]="apiResults['hydra:view']"></app-paginator>
+
   <table class="table table-striped table-hover">
     <thead>
       <tr>
@@ -57,4 +36,34 @@
       </tr>
     </tbody>
   </table>
+
+  <app-paginator [hydraView]="apiResults['hydra:view']"></app-paginator>
+
 </div>
+
+
+
+<!--<div class="d-flex justify-content-between mt-3">-->
+<!--  <button class="btn btn-success"-->
+<!--          (click)="updateResult(apiResults['hydra:view']['hydra:first'])"-->
+<!--  >-->
+<!--    First-->
+<!--  </button>-->
+<!--  <button class="btn btn-primary"-->
+<!--          (click)="updateResult(apiResults['hydra:view']['hydra:previous'])"-->
+<!--          [disabled]="apiResults['hydra:view']['hydra:previous'] === undefined"-->
+<!--  >-->
+<!--    Previous-->
+<!--  </button>-->
+<!--  <button class="btn btn-warning"-->
+<!--          (click)="updateResult(apiResults['hydra:view']['hydra:next'])"-->
+<!--          [disabled]="apiResults['hydra:view']['hydra:next'] === undefined"-->
+<!--  >-->
+<!--    Next-->
+<!--  </button>-->
+<!--  <button class="btn btn-danger"-->
+<!--          (click)="updateResult(apiResults['hydra:view']['hydra:last'])"-->
+<!--  >-->
+<!--    Last-->
+<!--  </button>-->
+<!--</div>-->

@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-between mt-3" *ngIf="hydraView">
+  <button class="btn btn-success"
+          (click)="updateGamePage(hydraView['hydra:first'])"
+  >
+    First
+  </button>
+  <button class="btn btn-primary"
+          (click)="updateGamePage(hydraView['hydra:previous'])"
+          [disabled]="hydraView['hydra:previous'] === undefined"
+  >
+    Previous
+  </button>
+  <button class="btn btn-warning"
+          (click)="updateGamePage(hydraView['hydra:next'])"
+          [disabled]="hydraView['hydra:next'] === undefined"
+  >
+    Next
+  </button>
+  <button class="btn btn-danger"
+          (click)="updateGamePage(hydraView['hydra:last'])"
+  >
+    Last
+  </button>
+</div>

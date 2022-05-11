@@ -11,7 +11,7 @@ export interface IApiResult<T> {
   // }
 }
 
-interface HydraViewContent {
+export interface HydraViewContent {
   'hydra:first': string;
   'hydra:last': string;
   'hydra:next': string|undefined;
