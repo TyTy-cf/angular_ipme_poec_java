@@ -8,13 +8,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {HttpClientModule} from "@angular/common/http";
 import { GameIndexComponent } from './game-index/game-index.component';
 import {FormsModule} from "@angular/forms";
+import { AccountIndexComponent } from './account-index/account-index.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChessGameComponent,
     NavbarComponent,
-    GameIndexComponent
+    GameIndexComponent,
+    AccountIndexComponent
   ],
   imports: [
     BrowserModule,

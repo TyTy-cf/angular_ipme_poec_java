@@ -28,10 +28,10 @@ export class GameIndexComponent implements OnInit {
           return throwError(err);
         })
       )
+      // results => un objet du type contenu dans notre Observable
       .subscribe((results) => {
         this.apiResult = results;
         console.log(results["hydra:view"])
-        // results["hydra:member"]
       });
   }
 

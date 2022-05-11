@@ -1,11 +1,29 @@
 
 
-<div class="container" *ngIf="apiResult">
+<div class="container" *ngIf="apiResult; else loadingData">
   <div class="d-flex justify-content-between mt-3">
-    <button class="btn btn-success">First</button>
-    <button class="btn btn-primary">Previous</button>
-    <button class="btn btn-warning">Next</button>
-    <button class="btn btn-danger">Last</button>
+    <button class="btn btn-success"
+            (click)="updateGamePage(apiResult['hydra:view']['hydra:first'])"
+    >
+      First
+    </button>
+    <button class="btn btn-primary"
+            (click)="updateGamePage(apiResult['hydra:view']['hydra:previous'])"
+            [disabled]="apiResult['hydra:view']['hydra:previous'] === undefined"
+    >
+      Previous
+    </button>
+    <button class="btn btn-warning"
+            (click)="updateGamePage(apiResult['hydra:view']['hydra:next'])"
+            [disabled]="apiResult['hydra:view']['hydra:next'] === undefined"
+    >
+      Next
+    </button>
+    <button class="btn btn-danger"
+            (click)="updateGamePage(apiResult['hydra:view']['hydra:last'])"
+    >
+      Last
+    </button>
   </div>
   <div class="row">
     <div class="col-lg-3 col-md-6" *ngFor="let game of apiResult['hydra:member']">
@@ -15,3 +33,9 @@
     </div>
   </div>
 </div>
+
+<ng-template #loadingData>
+  <div class="container">
+    <h1>Récupération des données en cours...</h1>
+  </div>
+</ng-template>

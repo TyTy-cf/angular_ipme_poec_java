@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {ChessBoard} from "../../models/chess/chess-board";
 
 @Component({
@@ -6,12 +6,8 @@ import {ChessBoard} from "../../models/chess/chess-board";
   templateUrl: './chess-game.component.html',
   styleUrls: ['./chess-game.component.scss']
 })
-export class ChessGameComponent implements OnInit {
+export class ChessGameComponent {
 
   chessBoard: ChessBoard = new ChessBoard();
-
-  ngOnInit(): void {
-    // console.log(this.chessBoard.tiles);
-  }
 
 }
