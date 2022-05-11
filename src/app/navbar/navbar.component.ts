@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  dieCounter: number = 0;
   path: string = '';
 
+  addCounter() {
+    this.dieCounter += 1;
+  }
 }

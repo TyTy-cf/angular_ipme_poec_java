@@ -10,7 +10,10 @@
           <button [routerLink]="path" class="btn btn-primary">Go to</button>
         </div>
       </div>
+      <button class="btn btn-danger" (click)="addCounter()">Add Die Counter</button>
+      <p>{{dieCounter}}</p>
       <a class="navbar-brand" routerLink="chess">Chess</a>
+      <a class="navbar-brand" routerLink="">Les Accounts</a>
       <a class="navbar-brand" routerLink="game">Les jeux</a>
     </div>
   </nav>
