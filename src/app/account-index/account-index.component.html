@@ -1,28 +1,56 @@
 
-<div class="container">
+<div class="container" *ngIf="apiResults">
+  <div class="d-flex justify-content-between mt-3">
+    <button class="btn btn-success"
+            (click)="updateResult(apiResults['hydra:view']['hydra:first'])"
+    >
+      First
+    </button>
+    <button class="btn btn-primary"
+            (click)="updateResult(apiResults['hydra:view']['hydra:previous'])"
+            [disabled]="apiResults['hydra:view']['hydra:previous'] === undefined"
+    >
+      Previous
+    </button>
+    <button class="btn btn-warning"
+            (click)="updateResult(apiResults['hydra:view']['hydra:next'])"
+            [disabled]="apiResults['hydra:view']['hydra:next'] === undefined"
+    >
+      Next
+    </button>
+    <button class="btn btn-danger"
+            (click)="updateResult(apiResults['hydra:view']['hydra:last'])"
+    >
+      Last
+    </button>
+  </div>
   <table class="table table-striped table-hover">
     <thead>
       <tr>
         <th>
-          Titre du contenu
+          Nom
         </th>
         <th>
-          Titre du contenu 2
+          Email
+        </th>
+        <th>
+          Pseudo
+        </th>
+        <th>
+          Porte-feuille
+        </th>
+        <th>
+          Nombre de jeux
         </th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Value</td>
-        <td>Value 2</td>
-      </tr>
-      <tr>
-        <td>Value</td>
-        <td>Value 2</td>
-      </tr>
-      <tr>
-        <td>Value</td>
-        <td>Value 2</td>
+      <tr *ngFor="let account of apiResults['hydra:member']">
+        <td>{{account.name}}</td>
+        <td>{{account.email}}</td>
+        <td>{{account.nickname}}</td>
+        <td>{{account.wallet}}€</td>
+        <td>{{account.libraries.length}}</td>
       </tr>
     </tbody>
   </table>

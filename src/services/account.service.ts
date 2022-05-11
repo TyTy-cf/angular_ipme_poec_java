@@ -4,17 +4,17 @@ import {Observable} from "rxjs";
 import {IApiResult} from "../models/steamish/i-api-result";
 import {Game} from "../models/steamish/game";
 import {UrlApiConstantes} from "./url-api-constantes";
+import {Account} from "../models/steamish/account";
 
 @Injectable({
   providedIn: 'root'
 })
-export class HttpClientGameService {
+export class HttpAccountService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getGames(urlGamesPaginated: string): Observable<IApiResult<Game>> {
-    console.log(UrlApiConstantes.urlApi + urlGamesPaginated);
-    return this.httpClient.get<IApiResult<Game>>(UrlApiConstantes.urlApi + urlGamesPaginated);
+  getAccounts(urlPaginated: string): Observable<IApiResult<Account>> {
+    console.log(UrlApiConstantes.urlApi + urlPaginated);
+    return this.httpClient.get<IApiResult<Account>>(UrlApiConstantes.urlApi + urlPaginated);
   }
-
 }

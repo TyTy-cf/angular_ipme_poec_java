@@ -4,6 +4,7 @@ import {IApiResult} from "../../models/steamish/i-api-result";
 import {Game} from "../../models/steamish/game";
 import {catchError} from "rxjs/operators";
 import {throwError} from "rxjs";
+import {UrlApiConstantes} from "../../services/url-api-constantes";
 
 @Component({
   selector: 'app-game-index',
@@ -20,7 +21,7 @@ export class GameIndexComponent implements OnInit {
     this.updateGamePage();
   }
 
-  updateGamePage(endUrl: string = '/api/games?page=1'): void {
+  updateGamePage(endUrl: string = UrlApiConstantes.urlGames): void {
     this.gameService.getGames(endUrl)
       .pipe(
         catchError(err => {
