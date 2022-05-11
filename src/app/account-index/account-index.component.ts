@@ -19,7 +19,7 @@ export class AccountIndexComponent implements OnInit {
     this.updateResult();
   }
 
-  updateResult(url: string = UrlApiConstantes.urlAccounts) {
+  updateResult(url: string = UrlApiConstantes.urlAccountsPaginated) {
     this.accountService.getAccounts(url).subscribe((results) => {
       this.apiResults = results;
     });

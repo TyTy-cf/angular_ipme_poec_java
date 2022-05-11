@@ -1,0 +1,14 @@
+
+
+<div class="container">
+  <div *ngIf="account; else noAccount">
+    <h1>Compte de {{ account.name }}</h1>
+    <p>Pseudo : {{ account.nickname }}</p>
+    <p>Email : {{ account.email }}</p>
+    <p>Porte-feuille : {{ account.wallet }}€</p>
+  </div>
+</div>
+
+<ng-template #noAccount>
+  <p class="my-2">Aucun compte n'existe pour l'id {{paramId}}</p>
+</ng-template>

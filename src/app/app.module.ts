@@ -9,6 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { GameIndexComponent } from './game-index/game-index.component';
 import {FormsModule} from "@angular/forms";
 import { AccountIndexComponent } from './account-index/account-index.component';
+import { AccountShowComponent } from './account-show/account-show.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AccountIndexComponent } from './account-index/account-index.component';
     ChessGameComponent,
     NavbarComponent,
     GameIndexComponent,
-    AccountIndexComponent
+    AccountIndexComponent,
+    AccountShowComponent
   ],
   imports: [
     BrowserModule,

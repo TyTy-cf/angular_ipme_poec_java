@@ -45,7 +45,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let account of apiResults['hydra:member']">
+      <tr *ngFor="let account of apiResults['hydra:member']"
+          routerLink="account/{{account.id}}/detail/{{account.name}}"
+          class="router-link"
+      >
         <td>{{account.name}}</td>
         <td>{{account.email}}</td>
         <td>{{account.nickname}}</td>
