@@ -12,6 +12,7 @@ import { AccountIndexComponent } from './account-index/account-index.component';
 import { AccountShowComponent } from './account-show/account-show.component';
 import { PaginatorComponent } from './paginator/paginator.component';
 import { DigimonIndexComponent } from './digimon-index/digimon-index.component';
+import { DigimonLevelComponent } from './digimon-level/digimon-level.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DigimonIndexComponent } from './digimon-index/digimon-index.component';
     AccountIndexComponent,
     AccountShowComponent,
     PaginatorComponent,
-    DigimonIndexComponent
+    DigimonIndexComponent,
+    DigimonLevelComponent
   ],
   imports: [
     BrowserModule,

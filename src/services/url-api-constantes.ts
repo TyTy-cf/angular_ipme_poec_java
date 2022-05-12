@@ -9,5 +9,6 @@ export class UrlApiConstantes {
 
   /** Digimon */
   static urlDigimon: string = 'https://digimon-api.herokuapp.com/api/digimon';
+  static urlDigimonLevel: string = 'https://digimon-api.herokuapp.com/api/digimon/level/';
 
 }
