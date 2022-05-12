@@ -7,6 +7,7 @@ import {AccountShowComponent} from "./account-show/account-show.component";
 import {DigimonIndexComponent} from "./digimon-index/digimon-index.component";
 import {DigimonLevelComponent} from "./digimon-level/digimon-level.component";
 import {AccountFormComponent} from "./account-form/account-form.component";
+import {AccountFormCodeComponent} from "./account-form-code/account-form-code.component";
 
 const routes: Routes = [
   { path: 'chess', component: ChessGameComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'digidex', component: DigimonIndexComponent },
   { path: 'digidex/:level', component: DigimonLevelComponent },
   { path: 'account/creer', component: AccountFormComponent },
+  { path: 'account/creer/code', component: AccountFormCodeComponent },
 ];
 
 @NgModule({

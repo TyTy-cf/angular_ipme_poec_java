@@ -1,0 +1,81 @@
+
+<div class="container">
+  <div [class.d-none]="!displayInfos" class="alert-success py-2 px-4">
+    Votre compte a bien été créé !
+  </div>
+  <form [formGroup]="formGroup" class="mt-4">
+    <div class="row">
+      <div class="col-lg-2">
+        <label>Nom</label>
+      </div>
+      <div class="col-lg-5">
+        <input  class="form-control"
+                formControlName="name"
+                placeholder="Name"
+                [class.is-valid]="name.valid"
+                [class.is-invalid]="(name.touched || name.dirty) && name.invalid"
+                type="text"
+        >
+        <div  class="alert-danger"
+              *ngIf="(name.touched || name.dirty) && name.invalid"
+        >
+          <div *ngIf="name.errors?.required">
+            Le nom doit être renseigné
+          </div>
+          <div *ngIf="name.errors?.minlength">
+            Le nom doit faire au moins 5 caractères
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-lg-2">
+        <label>Email</label>
+      </div>
+      <div class="col-lg-5">
+        <input  class="form-control"
+                formControlName="email"
+                placeholder="Email"
+                [class.is-valid]="email.valid"
+                [class.is-invalid]="(email.touched || email.dirty) && email.invalid"
+                type="text"
+        >
+        <div  class="alert-danger"
+              *ngIf="(email.touched || email.dirty) && email.invalid"
+        >
+          <div *ngIf="email.errors?.required">
+            L'email doit être renseigné
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2">
+        <label>Nickname</label>
+      </div>
+      <div class="col-lg-5">
+        <input  class="form-control"
+                formControlName="nickname"
+                placeholder="Nickname"
+                [class.is-valid]="nickname.valid"
+                [class.is-invalid]="(nickname.touched || nickname.dirty) && nickname.invalid"
+                type="text"
+        >
+        <div  class="alert-danger"
+              *ngIf="(nickname.touched || nickname.dirty) && nickname.invalid"
+        >
+          <div *ngIf="nickname.errors?.required">
+            Le nickname doit être renseigné
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary mt-4"
+            [disabled]="formGroup.invalid"
+            [class.btn-danger]="formGroup.invalid"
+            (click)="onSubmit()"
+    >
+      Soumettre
+    </button>
+  </form>
+</div>

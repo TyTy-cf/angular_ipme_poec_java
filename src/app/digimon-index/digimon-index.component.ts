@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
 import {HttpDigimonService} from "../../services/http-digimon.service";
 import {Digimon} from "../../models/digimon";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-digimon-index',
@@ -11,7 +12,10 @@ export class DigimonIndexComponent implements OnInit, AfterViewInit, OnDestroy {
 
   digimons: Array<Digimon> = [];
 
-  constructor(private httpDigimon: HttpDigimonService) { }
+  constructor(
+    private httpDigimon: HttpDigimonService,
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
     this.httpDigimon.getDigimons().subscribe((jsonDigimon) => {

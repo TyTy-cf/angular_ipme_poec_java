@@ -14,6 +14,7 @@ import { PaginatorComponent } from './paginator/paginator.component';
 import { DigimonIndexComponent } from './digimon-index/digimon-index.component';
 import { DigimonLevelComponent } from './digimon-level/digimon-level.component';
 import { AccountFormComponent } from './account-form/account-form.component';
+import { AccountFormCodeComponent } from './account-form-code/account-form-code.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AccountFormComponent } from './account-form/account-form.component';
     DigimonIndexComponent,
     DigimonLevelComponent,
     AccountFormComponent,
+    AccountFormCodeComponent,
   ],
   imports: [
     BrowserModule,
