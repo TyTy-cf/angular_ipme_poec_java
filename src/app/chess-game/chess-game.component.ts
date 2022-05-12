@@ -10,4 +10,8 @@ export class ChessGameComponent {
 
   chessBoard: ChessBoard = new ChessBoard();
 
+  constructor() {
+    console.log(this.chessBoard);
+  }
+
 }

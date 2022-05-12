@@ -11,6 +11,7 @@ import {FormsModule} from "@angular/forms";
 import { AccountIndexComponent } from './account-index/account-index.component';
 import { AccountShowComponent } from './account-show/account-show.component';
 import { PaginatorComponent } from './paginator/paginator.component';
+import { DigimonIndexComponent } from './digimon-index/digimon-index.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PaginatorComponent } from './paginator/paginator.component';
     GameIndexComponent,
     AccountIndexComponent,
     AccountShowComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    DigimonIndexComponent
   ],
   imports: [
     BrowserModule,
