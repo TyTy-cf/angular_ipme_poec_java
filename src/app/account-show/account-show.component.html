@@ -3,9 +3,11 @@
 <div class="container">
   <div *ngIf="account; else noAccount">
     <h1>Compte de {{ account.name }}</h1>
-    <p>Pseudo : {{ account.nickname }}</p>
-    <p>Email : {{ account.email }}</p>
-    <p>Porte-feuille : {{ account.wallet }}€</p>
+    <div [class.d-none]="onEdit">
+      <p>Pseudo : {{ account.nickname }}</p>
+      <p>Email : {{ account.email }}</p>
+      <p>Porte-feuille : {{ account.wallet }}€</p>
+    </div>
 
     <button class="btn btn-warning" (click)="onEdit = !onEdit">
       Modifier

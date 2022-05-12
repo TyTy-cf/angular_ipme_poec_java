@@ -28,19 +28,62 @@
         <th>
           Nombre de jeux
         </th>
+        <th>
+        </th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let account of apiResults['hydra:member']"
-          routerLink="account/{{account.id}}/detail/{{account.name}}"
-          class="router-link"
+      <ng-container
+        *ngFor="let account of apiResults['hydra:member']"
       >
-        <td>{{account.name}}</td>
-        <td>{{account.email}}</td>
-        <td>{{account.nickname}}</td>
-        <td>{{account.wallet}}€</td>
-        <td>{{account.libraries.length}}</td>
-      </tr>
+        <tr
+          class="router-link"
+          [class.d-none]="account.isShown"
+        >
+          <td
+            routerLink="account/{{account.id}}/detail/{{account.name}}"
+          >{{account.name}}</td>
+          <td>{{account.email}}</td>
+          <td>{{account.nickname}}</td>
+          <td>{{account.wallet}}€</td>
+          <td>{{account.libraries.length}}</td>
+          <td>
+            <button class="btn btn-warning" (click)="account.isShown = !account.isShown">
+              Modifier
+            </button>
+          </td>
+        </tr>
+        <tr [class.d-none]="!account.isShown">
+          <td>
+            <input
+              [(ngModel)]="account.name"
+              name="nameAccount{{account.id}}"
+              class="form-control"
+            >
+          </td>
+          <td>
+            <input
+              [(ngModel)]="account.email"
+              name="emailAccount{{account.id}}"
+              class="form-control"
+            >
+          </td>
+          <td>
+            <input
+              [(ngModel)]="account.nickname"
+              name="nicknameAccount{{account.id}}"
+              class="form-control"
+            >
+          </td>
+          <td>{{account.wallet}}€</td>
+          <td>{{account.libraries.length}}</td>
+          <td>
+            <button class="btn btn-success" (click)="account.isShown = !account.isShown">
+              Valider
+            </button>
+          </td>
+        </tr>
+      </ng-container>
     </tbody>
   </table>
 

@@ -7,6 +7,7 @@ export class Account {
   private _nickname: string = '';
   private _wallet: number = 0;
   private _libraries: string[];
+  private _isShown: boolean = false;
 
   constructor() {
     this._libraries = []
@@ -58,5 +59,13 @@ export class Account {
 
   set libraries(value: string[]) {
     this._libraries = value;
+  }
+
+  get isShown(): boolean {
+    return this._isShown;
+  }
+
+  set isShown(value: boolean) {
+    this._isShown = value;
   }
 }
