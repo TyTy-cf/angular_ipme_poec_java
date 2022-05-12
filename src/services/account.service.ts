@@ -22,4 +22,8 @@ export class HttpAccountService {
     console.log(UrlApiConstantes.urlApi + UrlApiConstantes.urlAccounts + id);
     return this.httpClient.get<Account>(UrlApiConstantes.urlApi + UrlApiConstantes.urlAccounts + id);
   }
+
+  // postAccount(account: Account): Observable<any> {
+  //   return this.httpClient.post();
+  // }
 }

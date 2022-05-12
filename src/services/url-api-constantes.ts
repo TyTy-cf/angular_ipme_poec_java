@@ -1,5 +1,13 @@
+import {HttpHeaders} from "@angular/common/http";
 
 export class UrlApiConstantes {
+
+  /** Header */
+  static headers: {headers: HttpHeaders} = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/ld+json',
+    })
+  };
 
   /** STEAMISH */
   static urlApi: string = 'https://steam-ish.test-02.drosalys.net';
