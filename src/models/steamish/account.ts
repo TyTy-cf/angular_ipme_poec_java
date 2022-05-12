@@ -1,3 +1,4 @@
+import {IPostAccount} from "./i-post-account";
 
 export class Account {
 
@@ -67,5 +68,15 @@ export class Account {
 
   set isShown(value: boolean) {
     this._isShown = value;
+  }
+
+  toPostJson(): IPostAccount {
+    return {
+      name: this._name,
+      nickname: this._nickname,
+      email: this._email,
+      wallet: this._wallet,
+      libraries: this._libraries
+    };
   }
 }
