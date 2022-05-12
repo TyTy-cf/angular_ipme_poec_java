@@ -10,9 +10,9 @@ import {Account} from "../../models/steamish/account";
 })
 export class AccountShowComponent implements OnInit {
 
- paramId: string|undefined;
- account: Account|undefined;
-
+  paramId: string|undefined;
+  account: Account|undefined;
+  onEdit: boolean = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,

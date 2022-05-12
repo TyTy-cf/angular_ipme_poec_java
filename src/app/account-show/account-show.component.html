@@ -6,6 +6,13 @@
     <p>Pseudo : {{ account.nickname }}</p>
     <p>Email : {{ account.email }}</p>
     <p>Porte-feuille : {{ account.wallet }}€</p>
+
+    <button class="btn btn-warning" (click)="onEdit = !onEdit">
+      Modifier
+    </button>
+    <div [class.d-none]="!onEdit">
+      <app-account-form [account]="account"></app-account-form>
+    </div>
   </div>
 </div>
 

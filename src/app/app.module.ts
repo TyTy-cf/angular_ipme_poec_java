@@ -7,12 +7,13 @@ import { ChessGameComponent } from './chess-game/chess-game.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {HttpClientModule} from "@angular/common/http";
 import { GameIndexComponent } from './game-index/game-index.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AccountIndexComponent } from './account-index/account-index.component';
 import { AccountShowComponent } from './account-show/account-show.component';
 import { PaginatorComponent } from './paginator/paginator.component';
 import { DigimonIndexComponent } from './digimon-index/digimon-index.component';
 import { DigimonLevelComponent } from './digimon-level/digimon-level.component';
+import { AccountFormComponent } from './account-form/account-form.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +25,15 @@ import { DigimonLevelComponent } from './digimon-level/digimon-level.component';
     AccountShowComponent,
     PaginatorComponent,
     DigimonIndexComponent,
-    DigimonLevelComponent
+    DigimonLevelComponent,
+    AccountFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

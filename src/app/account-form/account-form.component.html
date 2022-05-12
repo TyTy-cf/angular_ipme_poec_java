@@ -1,0 +1,84 @@
+
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #formAccount="ngForm" class="mt-4">
+    <div class="row">
+      <div class="col-lg-2">
+        <label>Nom</label>
+      </div>
+      <div class="col-lg-5">
+        <input  [(ngModel)]="account.name"
+                name="nomRandomInputName"
+                #inputName="ngModel"
+                class="form-control"
+                [class.is-valid]="inputName.valid"
+                [class.is-invalid]="(inputName.touched || inputName.dirty) && inputName.invalid"
+                type="text"
+                required
+                minlength="5"
+        >
+        <div  class="alert-danger"
+              *ngIf="(inputName.touched || inputName.dirty) && inputName.invalid"
+        >
+          <div *ngIf="inputName.errors?.required">
+            Le nom doit être renseigné
+          </div>
+          <div *ngIf="inputName.errors?.minlength">
+            Le nom doit faire au moins 5 caractères
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-lg-2">
+        <label>Pseudo</label>
+      </div>
+      <div class="col-lg-5">
+        <input  [(ngModel)]="account.nickname"
+                name="nomRandomInputNickname"
+                #inputNickname="ngModel"
+                class="form-control"
+                [class.is-valid]="inputNickname.valid"
+                [class.is-invalid]="(inputNickname.touched || inputNickname.dirty) && inputNickname.invalid"
+                type="text"
+                required
+        >
+        <div  class="alert-danger"
+              *ngIf="(inputNickname.touched || inputNickname.dirty) && inputNickname.invalid"
+        >
+          <div *ngIf="inputNickname.errors?.required">
+            Le pseudo doit être renseigné
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2">
+        <label>Email</label>
+      </div>
+      <div class="col-lg-5">
+        <input  [(ngModel)]="account.email"
+                name="nomRandomInputEmail"
+                #inputEmail="ngModel"
+                class="form-control"
+                [class.is-valid]="inputEmail.valid"
+                [class.is-invalid]="(inputEmail.touched || inputEmail.dirty) && inputEmail.invalid"
+                type="email"
+                required
+        >
+        <div  class="alert-danger"
+              *ngIf="(inputEmail.touched || inputEmail.dirty) && inputEmail.invalid"
+        >
+          <div *ngIf="inputEmail.errors?.required">
+            L'email doit être renseigné
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary mt-4"
+            [disabled]="formAccount.invalid"
+            [class.btn-danger]="formAccount.invalid"
+    >
+      Soumettre (le form)
+    </button>
+  </form>
+</div>
