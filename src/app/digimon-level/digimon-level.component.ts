@@ -19,7 +19,7 @@ export class DigimonLevelComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      this.httpDigimon.getDigimonsByLevel(params.level).subscribe((jsonDigimon) => {
+      this.httpDigimon.getDigimonsByLevel(params.digimonLevel).subscribe((jsonDigimon) => {
         this.digimons = jsonDigimon;
       })
     });

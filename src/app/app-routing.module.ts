@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'game', component: GameIndexComponent },
   { path: 'account/:id/detail/:name', component: AccountShowComponent },
   { path: 'digidex', component: DigimonIndexComponent },
-  { path: 'digidex/:level', component: DigimonLevelComponent },
+  { path: 'digidex/:digimonLevel', component: DigimonLevelComponent },
   { path: 'account/creer', component: AccountFormComponent },
   { path: 'account/creer/code', component: AccountFormCodeComponent },
 ];
