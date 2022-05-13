@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Account} from "../../models/steamish/account";
 import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import {HttpAccountService} from "../../services/account.service";
 
 @Component({
   selector: 'app-account-form-code',
@@ -15,7 +16,10 @@ export class AccountFormCodeComponent implements OnInit {
   formGroup!: FormGroup;
   displayInfos: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private accountService: HttpAccountService
+  ) { }
 
   ngOnInit(): void {
     this.formGroup = new FormGroup(
@@ -61,7 +65,7 @@ export class AccountFormCodeComponent implements OnInit {
       this.account.email = this.email.value;
       this.account.nickname = this.nickname.value;
       this.displayInfos = true;
-      // post vers api
+      this.accountService.postAccount(this.account).subscribe();
       this.router.navigate(['/']);
     }
   }

@@ -73,10 +73,10 @@ export class Account {
   toPostJson(): IPostAccount {
     return {
       name: this._name,
-      nickname: this._nickname,
       email: this._email,
+      nickname: this._nickname,
+      libraries: this._libraries,
       wallet: this._wallet,
-      libraries: this._libraries
     };
   }
 }

@@ -23,7 +23,13 @@ export class HttpAccountService {
     return this.httpClient.get<Account>(UrlApiConstantes.urlApi + UrlApiConstantes.urlAccounts + id);
   }
 
-  // postAccount(account: Account): Observable<any> {
-  //   return this.httpClient.post();
-  // }
+  postAccount(account: Account): Observable<Account> {
+    const url: string = UrlApiConstantes.urlApi + UrlApiConstantes.urlPostAccounts;
+    console.log(url);
+    return this.httpClient.post<Account>(
+      url,
+      account.toPostJson(),
+      UrlApiConstantes.headers
+    );
+  }
 }

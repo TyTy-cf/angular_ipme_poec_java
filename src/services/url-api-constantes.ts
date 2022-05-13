@@ -14,6 +14,7 @@ export class UrlApiConstantes {
   static urlGames: string = '/api/games?page=1';
   static urlAccountsPaginated: string = '/api/accounts?page=1';
   static urlAccounts: string = '/api/accounts/';
+  static urlPostAccounts: string = '/api/accounts';
 
   /** Digimon */
   static urlDigimon: string = 'https://digimon-api.herokuapp.com/api/digimon';
